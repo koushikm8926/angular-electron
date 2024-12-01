@@ -1,7 +1,50 @@
-<div class="container">
-  <h1 class="title">
-    {{ 'PAGES.HOME.TITLE' | translate }}
-  </h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>News Manager Home</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <h1>News Manager</h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#add-news">Add News</a></li>
+        <li><a href="#manage-news">Manage News</a></li>
+        <li><a href="#profile">Profile</a></li>
+      </ul>
+    </nav>
+  </header>
 
-  <a routerLink="/detail">{{ 'PAGES.HOME.GO_TO_DETAIL' | translate }}</a>
-</div>
+  <main class="main-content">
+    <section class="hero">
+      <h2>Welcome to the News Manager Application</h2>
+      <p>Your one-stop solution for managing news articles efficiently.</p>
+    </section>
+    <section class="news-section">
+      <h2>Latest News</h2>
+      <div class="news-card">
+        <h3>Breaking News 1</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis.</p>
+      </div>
+      <div class="news-card">
+        <h3>Breaking News 2</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis.</p>
+      </div>
+      <div class="news-card">
+        <h3>Breaking News 3</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam quis.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2024 News Manager. All rights reserved.</p>
+  </footer>
+</body>
+</html>
