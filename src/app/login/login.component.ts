@@ -19,4 +19,10 @@ export class LoginComponent {
     console.log('Password:', this.password);
     // Add your login logic here
   }
+
+  constructor(private router: Router) {} // Inject Router
+
+  navigateToRegister(): void {
+    this.router.navigate(['/register']); // Navigate to the register page
+  }
 }

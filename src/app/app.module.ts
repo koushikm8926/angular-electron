@@ -18,10 +18,8 @@ import { AppComponent } from './app.component';
 
 
 import { LoginComponent } from './login/login.component';
-
-
-
-
+import { RegistrationComponent } from './registration/registration.component';
+import { RouterModule } from '@angular/router';
 
 // AoT requires an exported function for factories
 const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -37,8 +35,13 @@ const httpLoaderFactory = (http: HttpClient): TranslateHttpLoader =>  new Transl
     HomeModule,
     DetailModule,
     FormsModule,
+    RouterModule,
     LoginComponent,
+    RegistrationComponent,
+    FormsModule,
     AppRoutingModule,
+    
+
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
