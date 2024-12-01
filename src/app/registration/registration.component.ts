@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-
+import { FormsModule } from '@angular/forms'; // Import FormsModule here for ngModel
 @Component({
   selector: 'app-registration',
   standalone: true,
@@ -15,15 +15,18 @@ export class RegistrationComponent {
 
   constructor(private router: Router) {}
 
+
   onRegister() {
     if (this.username && this.email && this.password) {
-      // Implement registration logic here (e.g., call a backend API)
+      alert('Thank you for registering!');
       console.log('User registered:', { username: this.username, email: this.email });
-      
-      // Navigate to login after registration
       this.router.navigate(['/login']);
     } else {
       alert('Please fill in all fields.');
     }
+  }
+  
+  navigateToLogin(): void {
+    this.router.navigate(['/login']); // Navigate to the register page
   }
 }
