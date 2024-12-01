@@ -1,15 +1,40 @@
-<div class="login-container">
-    <h2>Login</h2>
-    <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
-      <div>
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" [(ngModel)]="username" required />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="login-container">
+    <!-- Left Side: Login Form -->
+    <div class="left-side">
+      <div class="login-box">
+        <h2>Login</h2>
+        <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+          <div class="input-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" [(ngModel)]="username" required />
+          </div>
+          <div class="input-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="password" required />
+          </div>
+          <div class="forgot-password">
+            <a href="#">Forgot Password?</a>
+          </div>
+          <button type="submit" [disabled]="!loginForm.valid">Login</button>
+        </form>
       </div>
-      <div>
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" [(ngModel)]="password" required />
+    </div>
+
+    <!-- Right Side: Background Image (handled in CSS) -->
+    <div class="right-side">
+        <img src="https://static.vecteezy.com/system/resources/thumbnails/006/912/004/small_2x/secure-login-and-sign-up-concept-illustration-vector.jpg/image.jpg" alt="Login Illustration" class="login-image">
       </div>
-      <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
-    </form>
   </div>
-  
+
+</body>
+</html>
