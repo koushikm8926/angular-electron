@@ -5,10 +5,142 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Page</title>
   <link rel="stylesheet" href="styles.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #00e1be;
+    }
+
+    .login-container {
+      display: flex;
+      width: 80%;
+      height: 70%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+     background-color: #00e1be;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .right-side {
+      flex: 1;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #00e1be;
+      overflow: hidden;
+    }
+
+    .login-image {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .login-image:hover {
+      transform: scale(1.05);
+      opacity: 0.9;
+    }
+
+    .image-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to bottom right, rgba(0, 0, 0, 0.2), rgba(255, 255, 255, 0.1));
+      pointer-events: none;
+      border-radius: 10px;
+    }
+
+    .left-side {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    h2 {
+      margin-bottom: 1rem;
+      text-align: center;
+      color: #333;
+    }
+
+    .input-group {
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 0.8rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+      border-radius:25px;
+    }
+
+    .forgot-password {
+      text-align: right;
+      margin-top: -10px;
+      margin-bottom: 1rem;
+    }
+
+    .forgot-password a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 0.8rem;
+      font-size: 1rem;
+      color: white;
+      background-color: #00e1be; 
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:disabled {
+      background-color: #00bfa1;
+      cursor: not-allowed;
+    }
+
+  
+  </style>
 </head>
 <body>
 
   <div class="login-container">
+    <!-- Right Side: Background Image -->
+    <div class="right-side">
+      <img src="https://img.freepik.com/free-vector/login-concept-illustration_114360-739.jpg?t=st=1733052636~exp=1733056236~hmac=139f8c6ebfdb2c59d85e7f3b0a7e68210289dadcbaaad635852ecebf75da8231&w=1380" alt="Placeholder Image" class="login-image">
+
+      <div class="image-overlay"></div>
+    </div>
+
     <!-- Left Side: Login Form -->
     <div class="left-side">
       <div class="login-box">
@@ -25,15 +157,10 @@
           <div class="forgot-password">
             <a href="#">Forgot Password?</a>
           </div>
-          <button type="submit" [disabled]="!loginForm.valid">Login</button>
+          <button type="submit" >Login</button>
         </form>
       </div>
     </div>
-
-    <!-- Right Side: Background Image (handled in CSS) -->
-    <div class="right-side">
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/006/912/004/small_2x/secure-login-and-sign-up-concept-illustration-vector.jpg/image.jpg" alt="Login Illustration" class="login-image">
-      </div>
   </div>
 
 </body>
